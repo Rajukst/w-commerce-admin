@@ -25,7 +25,6 @@ const Sidebar = () => {
             </Col>
             <Col xs={12} md={9} lg={9}>
             <Outlet/>
-
             </Col>
         </Row>
        </Container>

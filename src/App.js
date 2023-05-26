@@ -8,12 +8,14 @@ import AddBlogs from './Components/AddBlogs/AddBlogs';
 import AddCatagories from "./Extra/AddSize/AddCatagories"
 import AddSize from './Extra/AddSizes/AddSize';
 import AddColor from './Components/EditProduct/AddColor';
+import AdminLogin from './Admin/AdminLogin/AdminLogin';
 function App() {
   return (
     <div>
      <BrowserRouter>
      <Routes>
-      <Route path='/' element={<Sidebar/>}>
+      <Route path='/' element={<AdminLogin/>}> </Route>
+      <Route path='/sidebar' element={<Sidebar/>}> 
       <Route path='dashboard' element={<Dashboard/>}/>
       <Route path='add-product' element={<AddProduct/>}/>
       <Route path='products' element={<AllProducts/>}/>
@@ -21,7 +23,6 @@ function App() {
       <Route path='add-blog' element={<AddBlogs/>}/>
       <Route path='catagory' element={<AddCatagories/>}/>
       <Route path='size' element={<AddSize/>}/>
-    
       </Route>
      </Routes>
      </BrowserRouter>
