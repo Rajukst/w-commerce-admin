@@ -87,7 +87,7 @@ const AddProduct = () => {
           e.target.reset();
         }
       });
-      navigate("/products")
+      navigate("/sidebar/products")
   };
   // showing available all Catagories 
   useEffect(()=>{

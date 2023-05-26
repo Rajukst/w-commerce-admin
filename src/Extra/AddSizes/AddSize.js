@@ -30,7 +30,7 @@ const AddSize = () => {
             timer: 1500,
           });
           e.target.reset();
-          navigate("/add-product")
+          navigate("/sidebar/add-product")
         }
       });
  }
