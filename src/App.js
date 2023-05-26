@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-
+import Sidebar from './Pages/Sidebar/Sidebar';
+import Dashboard from './Components/Dashboard/Dashboard';
+import AddProduct from './Components/AddProduct/AddProduct';
+import AllProducts from './Components/AllProducts/AllProducts';
+import AddBlogs from './Components/AddBlogs/AddBlogs';
+import AddCatagories from "./Extra/AddSize/AddCatagories"
+import AddSize from './Extra/AddSizes/AddSize';
+import AddColor from './Components/EditProduct/AddColor';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <BrowserRouter>
+     <Routes>
+      <Route path='/' element={<Sidebar/>}>
+      <Route path='dashboard' element={<Dashboard/>}/>
+      <Route path='add-product' element={<AddProduct/>}/>
+      <Route path='products' element={<AllProducts/>}/>
+      <Route path='color' element={<AddColor/>}/>
+      <Route path='add-blog' element={<AddBlogs/>}/>
+      <Route path='catagory' element={<AddCatagories/>}/>
+      <Route path='size' element={<AddSize/>}/>
+    
+      </Route>
+     </Routes>
+     </BrowserRouter>
     </div>
   );
 }
