@@ -7,39 +7,17 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Swal from "sweetalert2";
 
-const AllProducts = () => {
-  const [allProducts, setAllProducts] = useState([]);
-  useEffect(() => {
-    fetch("https://service-yvt2.onrender.com/products")
-      .then((res) => res.json())
-      .then((data) => setAllProducts(data));
 
-  }, []);
-  const handleDelete = (id) => {
-    const url = `https://service-yvt2.onrender.com/products/${id}`;
-    fetch(url, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount > 0) {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Delete successfull",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          const remainingProducts = allProducts.filter(
-            (newUpdate) => newUpdate._id !== id
-          );
-          setAllProducts(remainingProducts);
-        }
-      });
-  };
+const Orders = () => {
+    const [order, setOrder]= useState([])
 
+    useEffect(() => {
+        fetch(`https://service-yvt2.onrender.com/orders`)
+          .then((res) => res.json())
+          .then((data) => setOrder(data));
+      }, []);
+      console.log(order);
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: theme.palette.common.black,
@@ -59,57 +37,60 @@ const AllProducts = () => {
       border: 0,
     },
   }));
-  return (
-    <>
-      <div className="addProduct-image">
+    return (
+        <>
+        <div className="addProduct-image">
         <div className="mainInfo">
-          <h6 className="gnrlInfo">All Products List:</h6>
+          <h6 className="gnrlInfo">Order List:</h6>
           <div>
             <TableContainer component={Paper}>
               <Table sx={{ minWidth: 700 }} aria-label="customized table">
                 <TableHead>
                   <TableRow>
                     <StyledTableCell>SL</StyledTableCell>
-                    <StyledTableCell>Title</StyledTableCell>
+                    <StyledTableCell>Email</StyledTableCell>
                     <StyledTableCell align="center">
-                      Buying Price
+                      City
                     </StyledTableCell>
-                    <StyledTableCell align="center">Sell Price</StyledTableCell>
-                    <StyledTableCell align="center">SKU</StyledTableCell>
-                    <StyledTableCell align="center">Stock</StyledTableCell>
+                    <StyledTableCell align="center">Address</StyledTableCell>
+                    <StyledTableCell align="center">Status</StyledTableCell>
+                    <StyledTableCell align="center">Order Qty</StyledTableCell>
                     <StyledTableCell align="center">Actions</StyledTableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {
-                   allProducts.map((manageTable, index) => (
+                   order.map((manageTable, index) => (
                     <StyledTableRow key={manageTable._id}>
                       <StyledTableCell component="th" scope="row">
                         {index + 1}
                       </StyledTableCell>
                       <StyledTableCell component="th" scope="row">
-                        {manageTable.title}
+                        {manageTable?.emails}
                       </StyledTableCell>
                       <StyledTableCell align="center">
-                        {manageTable.buyPrice}
+                        {manageTable.city}
                       </StyledTableCell>
                       <StyledTableCell align="center">
-                        {manageTable.salePrice}
+                      {manageTable?.address}
                       </StyledTableCell>
                       <StyledTableCell align="center">
-                        {manageTable.sku}
+                        {manageTable?.orderStatus}
                       </StyledTableCell>
                       <StyledTableCell align="center">
-                        {manageTable.stock}
+                        {
+                        manageTable?.cartItems?.reduce((x, pro) => x + pro?.qty, 0) 
+                        
+                        }
+                        
                       </StyledTableCell>
                       <div className="button">
                         <StyledTableCell align="center">
-                          <button
-                            onClick={() => handleDelete(manageTable._id)}
-                            className="mt-2 dltButton"
-                          >
-                            Delete
-                          </button>
+                        <select name="stock" id="cars">
+                     
+                      <option value="approve">Approve</option>
+                      <option value="Reject">Reject</option>
+                      </select>
                         </StyledTableCell>
                       </div>
                     </StyledTableRow>
@@ -122,8 +103,8 @@ const AllProducts = () => {
         </div>
 
       </div>
-    </>
-  );
+      </>
+    );
 };
 
-export default AllProducts;
+export default Orders;

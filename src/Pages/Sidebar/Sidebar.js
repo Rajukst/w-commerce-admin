@@ -14,6 +14,7 @@ const Sidebar = () => {
                  <h5 className="allCatagoris">Dashboard</h5>
                  <Link to="dashboard" className="myLink"><h6>Dashboard</h6></Link>
                  <Link to="products" className="myLink"><h6>Products</h6></Link>
+                 <Link to="orders" className="myLink"><h6>Orders</h6></Link>
                  <Link to="add-product" className="myLink"><h6>Add Product</h6></Link>
                  <Link to="color" className="myLink"><h6>Add Color</h6></Link>
                  <Link to="add-blog" className="myLink"><h6>Add Blog</h6></Link>
