@@ -42,7 +42,15 @@ height: 45px;
 }
 .dltButton{
     border: none;
-    background: none;
+    background-color: red;
+    transition: all 0.5s ease-out;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+.dltButton:hover,.dltButton:focus{
+    background-color: orangered;
+    color: white;
+
 }
 .productNameInfo{
     text-align: center;
