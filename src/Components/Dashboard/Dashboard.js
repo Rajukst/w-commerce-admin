@@ -1,9 +1,12 @@
 import React from 'react';
 import "./Dashboard.css"
+import TopSummary from '../../AllCharts/TopSummary/TopSummary';
+import ChartRenderAll from '../../AllCharts/ChartRenderAll/ChartRenderAll';
 const Dashboard = () => {
     return (
-        <div className='adMinDashboard'>
-            <h1>This is Dashboard</h1>
+        <div className=''>
+            <TopSummary/>
+            <ChartRenderAll/>
         </div>
     );
 };

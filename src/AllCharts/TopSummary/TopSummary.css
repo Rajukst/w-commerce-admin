@@ -1,0 +1,26 @@
+.mainHead{
+    background-color: rgb(223, 88, 3);
+    border-radius: 4px;
+}
+.bodys{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+.texts{
+    padding-left: 10px;
+}
+
+.mainHeadTwo{
+    background-color: rgb(122, 243, 17);
+    border-radius: 4px;
+}
+
+.mainHeadThree{
+    background-color: rgb(243, 17, 17);
+    border-radius: 4px;
+}
+.mainHeadFour{
+    background-color: rgb(202, 243, 17);
+    border-radius: 4px;
+}

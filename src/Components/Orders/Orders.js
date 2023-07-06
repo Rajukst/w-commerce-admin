@@ -17,7 +17,6 @@ const Orders = () => {
           .then((res) => res.json())
           .then((data) => setOrder(data));
       }, []);
-      console.log(order);
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
       backgroundColor: theme.palette.common.black,
