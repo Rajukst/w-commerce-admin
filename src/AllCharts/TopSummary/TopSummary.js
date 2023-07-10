@@ -47,12 +47,10 @@ console.log(order?.cartItems)
                 <i class="fa-solid fa-sack-dollar fa-3x"></i>
                 </div>
                 <div className="texts">
-                    <h5>
                     {
-                       order?.cartItems?.reduce((x, pro) => x + pro?.salePrice, 0) 
+                       order?.map?.cartItems?.reduce((x, pro) => x + pro?.salePrice, 0) 
                         
                         }
-                    </h5>
                     <h6>Sales</h6>
                 </div>
             </div>

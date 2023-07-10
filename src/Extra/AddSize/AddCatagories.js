@@ -51,8 +51,8 @@ const AddSize = () => {
                         required
                       />
                     </div>
-                    <div className="submitInfo">
-                        <button type='submit'>Submit</button>
+                    <div className="submitInformation">
+                        <button type='submit' className='shopBTN'>Submit</button>
                     </div>
             </form>
         </div>
