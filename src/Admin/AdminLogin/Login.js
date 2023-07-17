@@ -17,7 +17,7 @@ const AdminLogin = () => {
 
 const handleOnSubmit = ({email, password}) => {
     dispatch(loginUser({email, password}))
-
+    
 }
 useEffect(()=>{
   if(!isLoading && email){

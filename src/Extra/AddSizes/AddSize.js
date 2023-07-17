@@ -49,6 +49,7 @@ const AddSize = () => {
                         name=""
                         id=""
                         required
+                        placeholder='ex: s, m, xl'
                       />
                     </div>
                     <div className="submitInformation">

@@ -8,6 +8,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const AllProducts = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -104,12 +105,21 @@ const AllProducts = () => {
                       </StyledTableCell>
                       <div className="button">
                         <StyledTableCell align="center">
+                          <div className="actionButtons">
+                        <Link to={`${manageTable._id}`}>
+                        <button
+                            className="mt-2 me-1 dltButton"
+                          >
+                            Edit
+                          </button>
+                        </Link>
                           <button
                             onClick={() => handleDelete(manageTable._id)}
                             className="mt-2 dltButton"
                           >
                             Delete
                           </button>
+                          </div>
                         </StyledTableCell>
                       </div>
                     </StyledTableRow>
