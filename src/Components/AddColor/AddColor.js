@@ -12,7 +12,7 @@ const AddColor = () => {
      color
     };
     console.log(totalAdd);
-    fetch("https://service-yvt2.onrender.com/add-color", {
+    fetch("https://ecocart.onrender.com/add-color", {
       method: "POST",
       headers: {
         "content-type": "application/json",

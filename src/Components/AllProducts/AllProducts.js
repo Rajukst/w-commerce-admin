@@ -13,13 +13,13 @@ import { Link } from "react-router-dom";
 const AllProducts = () => {
   const [allProducts, setAllProducts] = useState([]);
   useEffect(() => {
-    fetch("https://service-yvt2.onrender.com/products")
+    fetch("https://ecocart.onrender.com/products")
       .then((res) => res.json())
       .then((data) => setAllProducts(data));
 
   }, []);
   const handleDelete = (id) => {
-    const url = `https://service-yvt2.onrender.com/products/${id}`;
+    const url = `https://ecocart.onrender.com/products/${id}`;
     fetch(url, {
       method: "DELETE",
     })

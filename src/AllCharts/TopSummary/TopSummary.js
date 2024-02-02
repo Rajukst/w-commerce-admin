@@ -7,7 +7,7 @@ const TopSummary = () => {
   const [order, setOrder]= useState([])
 console.log(order?.cartItems)
   useEffect(() => {
-      fetch(`https://service-yvt2.onrender.com/orders`)
+      fetch(`https://ecocart.onrender.com/orders`)
         .then((res) => res.json())
         .then((data) => setOrder(data));
     }, []);

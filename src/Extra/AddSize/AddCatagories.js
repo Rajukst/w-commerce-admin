@@ -12,7 +12,7 @@ const AddSize = () => {
           getCatagory
         };
         console.log(totalAdd);
-        fetch("https://service-yvt2.onrender.com/catagory", {
+        fetch("https://ecocart.onrender.com/catagory", {
           method: "POST",
           headers: {
             "content-type": "application/json",

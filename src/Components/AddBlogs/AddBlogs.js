@@ -22,7 +22,7 @@ const handleBlogSubmit= e=>{
     shortDesOne,shortDesTwo, status, statusName, Image
         };
         console.log(totalAdd);
-        fetch("https://service-yvt2.onrender.com/add-blog", {
+        fetch("https://ecocart.onrender.com/add-blog", {
           method: "POST",
           headers: {
             "content-type": "application/json",

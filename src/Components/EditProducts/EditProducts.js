@@ -6,7 +6,7 @@ const EditProducts = () => {
     const {id}= useParams()
     const [updateProduct,setUpdateProduct] = useState({})
     useEffect(()=>{
-        const url = `https://service-yvt2.onrender.com/products/${id}`;
+        const url = `https://ecocart.onrender.com/products/${id}`;
         fetch(url)
         .then(res=>res.json())
         .then(data=>setUpdateProduct(data))

@@ -12,7 +12,7 @@ const AddSize = () => {
      inputName
     };
     console.log(totalAdd);
-    fetch("https://service-yvt2.onrender.com/add-size", {
+    fetch("https://ecocart.onrender.com/add-size", {
       method: "POST",
       headers: {
         "content-type": "application/json",

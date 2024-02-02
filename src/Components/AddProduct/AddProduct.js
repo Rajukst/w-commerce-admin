@@ -67,7 +67,7 @@ const AddProduct = () => {
       editor,
     };
     console.log(totalAdd);
-    fetch("https://service-yvt2.onrender.com/add-product", {
+    fetch("https://ecocart.onrender.com/add-product", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -91,18 +91,18 @@ const AddProduct = () => {
   };
   // showing available all Catagories 
   useEffect(()=>{
-    fetch("https://service-yvt2.onrender.com/allCatagory")
+    fetch("https://ecocart.onrender.com/allCatagory")
     .then(res=>res.json())
     .then(data=>setCatagories(data))
   },[])
   // showing available all sizes
   useEffect(()=>{
-    fetch("https://service-yvt2.onrender.com/getSize")
+    fetch("https://ecocart.onrender.com/getSize")
     .then(res=>res.json())
     .then(data=>setAllSize(data))
   },[])
   useEffect(()=>{
-    fetch("https://service-yvt2.onrender.com/getColor")
+    fetch("https://ecocart.onrender.com/getColor")
     .then(res=>res.json())
     .then(data=>setColor(data))
   },[])
